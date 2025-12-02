@@ -1,0 +1,24 @@
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for children if needed, or just apply to individual elements */
+.scroll-reveal-delay-100 {
+    transition-delay: 100ms;
+}
+
+.scroll-reveal-delay-200 {
+    transition-delay: 200ms;
+}
+
+.scroll-reveal-delay-300 {
+    transition-delay: 300ms;
+}

@@ -1,0 +1,88 @@
+@import './variables.css';
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--neu-bg);
+    color: var(--color-neutral-800);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilities */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 16px;
+}
+
+.neu-panel {
+    background: var(--neu-bg);
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neu-btn {
+    background: var(--neu-bg);
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
+    border-radius: 12px;
+    border: none;
+    padding: var(--space-3) var(--space-6);
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.neu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
+}
+
+.neu-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--neu-shadow-inset);
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.section-padding {
+    padding: var(--space-16) 0;
+}
+
+/* Typography Utilities */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

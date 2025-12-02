@@ -28,13 +28,22 @@ const Header = () => {
                     />
                 </Link>
 
-                <nav className={`desktop-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-                    <Link to="/" className="nav-link">{t('nav.home')}</Link>
-                    <Link to="/news" className="nav-link">{t('nav.news')}</Link>
-                    <Link to="/services" className="nav-link">{t('nav.services')}</Link>
-                    <Link to="/tourist" className="nav-link">{t('nav.tourist')}</Link>
-                    <Link to="/contact" className="nav-link">{t('nav.contact')}</Link>
+                {/* Language switcher for mobile - outside nav */}
+                <div className="mobile-lang-switcher">
                     <LanguageSwitcher />
+                </div>
+
+                <nav className={`desktop-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+                    <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.home')}</Link>
+                    <Link to="/news" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.news')}</Link>
+                    <Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.services')}</Link>
+                    <Link to="/tourist" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.tourist')}</Link>
+                    <Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.contact')}</Link>
+
+                    {/* Language switcher for desktop - inside nav */}
+                    <div className="desktop-lang-switcher">
+                        <LanguageSwitcher />
+                    </div>
                     <button className="neu-btn nav-btn">{t('nav.login')}</button>
                 </nav>
 
